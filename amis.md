@@ -1,3 +1,8 @@
++++
+memflask = True
+isdraft = False
++++
+
 # AMIs - Amazon Machine Images
 
 ## AMI Basics

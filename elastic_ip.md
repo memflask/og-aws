@@ -1,4 +1,9 @@
-Elastic IPs
++++
+memflask = True
+isdraft = False
++++
+
+# Elastic IPs
 
 ## Elastic IP Basics
 

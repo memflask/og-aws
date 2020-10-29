@@ -1,3 +1,8 @@
++++
+memflask = True
+isdraft = False
++++
+
 # RDS
 
 ## RDS Basics
