@@ -1,12 +1,12 @@
-DirectConnect
+# DirectConnect
 -------------
 
-### DirectConnect Basics
+## DirectConnect Basics
 
 -	📒 [Homepage](https://aws.amazon.com/directconnect/) ∙ [User guide](http://docs.aws.amazon.com/directconnect/latest/UserGuide/) ∙ [FAQ](https://aws.amazon.com/directconnect/faqs/) ∙ [Pricing](https://aws.amazon.com/directconnect/pricing/)
 -	**Direct Connect** is a private, dedicated connection from your network(s) to AWS.
 
-### DirectConnect Tips
+## DirectConnect Tips
 
 -	If your data center has [a partnering relationship](https://aws.amazon.com/directconnect/partners/) with AWS, setup is streamlined.
 -	Use for more consistent predictable network performance guarantees (**1 Gbps** or **10 Gbps** per link).

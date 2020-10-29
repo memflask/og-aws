@@ -1,15 +1,15 @@
-RDS SQL Server
+# RDS SQL Server
 --------------
 
-### RDS SQL Server Basics
+## RDS SQL Server Basics
 
 -	[RDS offers SQL Server 2008 R2, 2012, 2014, 2016 and 2017](https://aws.amazon.com/rds/sqlserver/) including Express, Web, Standard and Enterprise.
 
-### RDS SQL Server Tips
+## RDS SQL Server Tips
 
 -	Recently added support for [backup and restore to/from S3](https://www.brentozar.com/archive/2016/07/holy-cow-amazon-rds-sql-server-just-changed-everything/) which may make it an attractive [DR option](https://aws.amazon.com/blogs/aws/amazon-rds-for-sql-server-support-for-native-backuprestore-to-amazon-s3/) for on-premises installations.
 
-### RDS SQL Server Gotchas and Limitations
+## RDS SQL Server Gotchas and Limitations
 
 -	🔸The user is granted only db_owner privileges for each database on the instance.
 -	🔸Storage cannot be expanded for existing databases. If you need more space, you must restore your database on a new instance with larger storage.

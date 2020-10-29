@@ -1,7 +1,6 @@
-Glacier
--------
+# Glacier
 
-### Glacier Basics
+## Glacier Basics
 
 -	📒 [Homepage](https://aws.amazon.com/glacier/) ∙ [Developer guide](http://docs.aws.amazon.com/amazonglacier/latest/dev/) ∙ [FAQ](https://aws.amazon.com/glacier/faqs/) ∙ [Pricing](https://aws.amazon.com/glacier/pricing/)
 -	**Glacier** is a lower-cost alternative to S3 when data is infrequently accessed, such as for archival purposes.
@@ -9,11 +8,11 @@ Glacier
 -	AWS [has not officially revealed](https://en.wikipedia.org/wiki/Amazon_Glacier#Storage) the storage media used by Glacier; it may be low-spin hard drives or even tapes.
 -	AWS has released an even more cost effective storate tier called [Glacier Deep Archive](https://aws.amazon.com/blogs/aws/new-amazon-s3-storage-class-glacier-deep-archive/) that offers ~12 hour retrieval latencies, but costs roughly a thousand dollars per month per petabyte.
 
-### Glacier Tips
+## Glacier Tips
 
 -	You can physically [ship](https://aws.amazon.com/blogs/aws/send-us-that-data/) your data to Amazon to put on Glacier on a USB or eSATA HDD.
 
-### Glacier Gotchas and Limitations
+## Glacier Gotchas and Limitations
 
 -	🔸Getting files off Glacier is glacially slow (typically 3-5 hours or more).
 -	🔸Due to a fixed overhead per file (you pay per PUT or GET operation), uploading and downloading many small files on/to Glacier might be very expensive. There is also a 32k storage overhead per file. Hence it’s a good idea is to archive files before upload.

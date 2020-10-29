@@ -1,7 +1,6 @@
 ElastiCache
------------
 
-### ElastiCache Basics
+## ElastiCache Basics
 
 - 📒 [Homepage](https://aws.amazon.com/elasticache/) ∙ [User
   guide for Redis](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/index.html) ∙ [User
@@ -19,7 +18,7 @@ ElastiCache
   its endpoint in your application, while AWS will take of most of the operational
   work of running the cache nodes.
 
-### ElastiCache Tips
+## ElastiCache Tips
 
 - Choose the
   [engine](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html),
@@ -37,11 +36,10 @@ ElastiCache
   [auto-discovery](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/AutoDiscovery.html),
   a feature not available in the normal memcached client libraries.
 
-### ElastiCache Gotchas and Limitations
+## ElastiCache Gotchas and Limitations
 
 - Since in some cases changing the cache clusters may have some restrictions,
-  like for
-  [scaling](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Scaling.html)
+  like for [scaling](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Scaling.html)
   purposes, it may become a problem if they were launched using CloudFormation
   in a stack that also contains other resources and you really need to change
   the cache. In order to avoid getting your CloudFormation stacks in a

@@ -1,19 +1,18 @@
-API Gateway
------------
+# API Gateway
 
-### API Gateway Basics
+## API Gateway Basics
 
 -	📒 [Homepage](https://aws.amazon.com/api-gateway/) ∙ [Developer guide](http://docs.aws.amazon.com/apigateway/latest/developerguide/) ∙ [FAQ](https://aws.amazon.com/api-gateway/faqs/) ∙ [Pricing](https://aws.amazon.com/api-gateway/pricing/)
 -	**API Gateway** provides a scalable, secured front-end for service APIs, and can work with Lambda, Elastic Beanstalk, or regular EC2 services.
 -	It allows “serverless” deployment of applications built with Lambda.
 -	🔸Switching over deployments after upgrades can be tricky. There are no built-in mechanisms to have a single domain name migrate from one API gateway to another one. So it may be necessary to build an additional layer in front (even another API Gateway) to allow smooth migration from one deployment to another.
 
-### API Gateway Alternatives and Lock-In
+## API Gateway Alternatives and Lock-In
 
 - [Kong](https://getkong.org) is an open-source, on-premises API and microservices gateway built on nginx with Lua. Kong is extensible through “plugins”.
 - [Tyk](https://tyk.io) is an open-source API gateway implemented in Go and available in the cloud, on-premises or hybrid.
 
-### API Gateway Tips
+## API Gateway Tips
 
 -	🔹Prior to 2016-11, you could only send and receive plain text data (so people would base64-encode binary data), but binary data is [now](https://aws.amazon.com/about-aws/whats-new/2016/11/binary-data-now-supported-by-api-gateway/) supported.
 -	API Gateway supports the OpenApi specification (aka [Swagger](https://swagger.io/)). This allows you to describe your API in a language-agnostic way and use various tools to generate code supporting your API.
@@ -27,7 +26,7 @@ API Gateway
 	-	RPC-style APIs are particularly useful when designing services that sit deeper in the stack and don't serve content directly to users.
 
 
-### API Gateway Gotchas and Limitations
+## API Gateway Gotchas and Limitations
 
 -	🔸API Gateway only supports encrypted (https) endpoints, and does not support unencrypted HTTP. (This is probably a good thing.)
 -	🔸API Gateway doesn’t support multi-region deployments for high availability. It is a service that is deployed in a single region but comes with a global endpoint that is served from AWS edge locations (similar to a CloudFront distribution). You cannot have multiple API Gateways with the same hostname in different AWS regions and use Route 53 to distribute the traffic. More in [this forum post](https://forums.aws.amazon.com/thread.jspa?messageID=735342&#735342).
@@ -41,4 +40,3 @@ API Gateway
 - 🔸API Gateway does not support nested query parameters on method requests.
 - 🔸API Gateway limits number of resources to 300, as described [here](http://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html#api-gateway-limits). This is something to be considered when you start using API Gateway as a platform where your team/organization deploys to the same API Gateway.
 
-🚧 [*Please help expand this incomplete section.*](CONTRIBUTING.md)

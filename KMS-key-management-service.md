@@ -1,7 +1,6 @@
-KMS
----
+# KMS
 
-### KMS Basics
+## KMS Basics
 
 -	📒 [Homepage](https://aws.amazon.com/kms/) ∙ [Developer guide](http://docs.aws.amazon.com/kms/latest/developerguide/) ∙ [FAQ](https://aws.amazon.com/kms/faqs/) ∙ [Pricing](https://aws.amazon.com/kms/pricing/)
 -	**KMS** (Key Management Service) is a secure service for creating, storing and auditing usage of cryptographic keys.
@@ -11,14 +10,14 @@ KMS
 - 🔹**Auditing:** Turn on CloudTrail to audit all KMS API events.
 - **Access:** Use [key policies](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) and [IAM policies](http://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html) to grant different levels of KMS access. For example, you create an IAM policy that only [allows a user to encrypt and decrypt with a specific key](http://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policy-example-encrypt-decrypt-specific-cmks).
 
-### KMS Tips
+## KMS Tips
 
 -	🔹It’s very common for companies to manage keys completely via home-grown mechanisms, but it’s far preferable to use a service such as KMS from the beginning, as it encourages more secure design and improves policies and processes around managing keys.
 -	A good motivation and overview is in [this AWS presentation](http://www.slideshare.net/AmazonWebServices/encryption-and-key-management-in-aws).
 -	The cryptographic details are in [this AWS whitepaper](https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf).
 -	[This blog from Convox](https://convox.com/blog/encryption-at-rest) demonstrates why and how to use KMS for encryption at rest.
 
-### KMS Gotchas and Limitations
+## KMS Gotchas and Limitations
 
 -	🔸The Encrypt API only works with < 4KB of data. Larger data requires generating and managing a [data key](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys) in your application layer.
 -	🔸KMS audit events are not available in the [CloudTrail Lookup Events API](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html). You need to look find them in the raw .json.gz files that CloudTrail saves in S3.

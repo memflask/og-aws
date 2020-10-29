@@ -1,11 +1,11 @@
-RDS PostgreSQL
+# RDS PostgreSQL
 --------------
 
-### RDS PostgreSQL Basics
+## RDS PostgreSQL Basics
 
 - RDS offers PostgreSQL 9.3, 9.4, 9.5, 9.6, and 10.
 
-### RDS PostgreSQL Tips
+## RDS PostgreSQL Tips
 - Recently Logical Replication is being supported, [both as subscriber and publisher](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.version104).
 - Supports a relatively large range of native [extensions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.FeatureSupport.Extensions).
 - RDS PostgreSQL 10 Supports native partitioning and most of the major features and tunables.
@@ -13,7 +13,7 @@ RDS PostgreSQL
 - Supports multi A-Z and Point-in-time recovery.
 
 
-### RDS PostgreSQL Gotchas and Limitations
+## RDS PostgreSQL Gotchas and Limitations
 - No superuser privileges. RDS provides a role `rds_superuser` that can do most of the needed operations but there are some limitations.
 - Some major features are delayed compared to open source PostgreSQL.
 - By default RDS is spec’d with general purpose SSD , if you need better performance you have to spec provisioned IOPS SSD.

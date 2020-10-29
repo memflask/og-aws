@@ -1,19 +1,18 @@
-CloudFormation
---------------
+# CloudFormation
 
-### CloudFormation Basics
+## CloudFormation Basics
 
 -	📒 [Homepage](https://aws.amazon.com/cloudformation/) ∙ [Developer guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/) ∙ [FAQ](https://aws.amazon.com/cloudformation/faqs/) ∙ [Pricing](https://aws.amazon.com/cloudformation/pricing/) at no additional charge
 -	**CloudFormation** allows you to manage sets of resources from other AWS services grouped into **[stacks](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#d0e3917)**. CloudFormation allows you to define these stacks in a template using [JSON](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#aws-properties-ec2-instance-syntax.json) or [YAML](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#aws-properties-ec2-instance-syntax.yaml). CloudFormation is one of the major services underpinning AWS' [infrastructure as code capabilities](https://d0.awsstatic.com/whitepapers/DevOps/infrastructure-as-code.pdf) and is crucial in enabling repeatable and consistent deployments of infrastructure.
 -	💸CloudFormation itself has [no additional charge](https://aws.amazon.com/cloudformation/pricing/); you pay for the underlying resources.
 
-### CloudFormation Alternatives and Lock-In
+## CloudFormation Alternatives and Lock-In
 
 -	HashiCorp’s [Terraform](https://www.terraform.io/intro/vs/cloudformation.html) is a third-party alternative that can support other cloud platforms/providers including [Azure](https://www.terraform.io/docs/providers/azure/) and [OpenStack](https://www.terraform.io/docs/providers/openstack/).
 - 🔸Some AWS features may not be available in Terraform (e.g. multi-AZ ElastiCache using Redis), and you may have to resort to embedded CloudFormation templates.
 -	[Pulumi](https://www.pulumi.com/) enables teams to define and deliver Cloud Native Infrastructure as Code on any cloud, with any language. From containers to serverless to Kubernetes to infrastructure.
 
-### CloudFormation Tips
+## CloudFormation Tips
 
 -	Validate your stack in a different AWS account! CloudFormation truly shines when making multiple deployments of the same stack to different accounts and regions. A common practice is to deploy stacks in successive stages ending in a production rollout.
 -	Avoid potentially time-consuming syntax errors from eating into your deployment time by running `validate-template`.
@@ -44,7 +43,7 @@ CloudFormation
 -	Avoid naming your resources explicitly (e.g. DynamoDB tables). When deploying multiple stacks to the same AWS account, these names can come into conflict, potentially slowing down your testing. Prefer using resource references instead.
 -	For things that shouldn't ever be deleted, you can set an explicit DeletionPolicy on the resource that will prevent the resource from being deleted even if the CloudFormation stack itself is deleted. This is useful for anything that can maintain expensive-to-rebuild state, such as DynamoDB tables, and things that are exposed to the outside world, such as API Gateway APIs.
 
-### CloudFormation Gotchas and Limitations
+## CloudFormation Gotchas and Limitations
 
 -	🔸A given CloudFormation stack can end up in a wide variety of states. Error reporting is generally weak, and often times multiple observe-tweak-redeploy cycles are needed to get a working template. The internal state machine for [all the varying states](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html) is extremely opaque.
 -	🔸Some cross-region operations are not possible in CloudFormation without using a custom resource, such as [cross-region SNS subscriptions](https://github.com/serverless/serverless/issues/3676).

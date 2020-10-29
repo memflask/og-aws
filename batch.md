@@ -1,7 +1,6 @@
-Batch
--------------------
+# Batch
 
-### Batch Basics
+## Batch Basics
 
 -	📒 [Homepage](https://aws.amazon.com/batch/) ∙ [Documentation](https://aws.amazon.com/documentation/batch/) ∙ [FAQ](https://aws.amazon.com/batch/faqs/) ∙ [Pricing](https://aws.amazon.com/batch/pricing/)
 - **AWS Batch** is a service that offers an environment to run batch computing jobs. The service dynamically provisions the optimal compute resources needed by the jobs based on their resource requirements, and can scale up to hundreds of thousands of [jobs](http://docs.aws.amazon.com/batch/latest/userguide/jobs.html).
@@ -14,7 +13,7 @@ Batch
 - The Job Definitions are submitted to [Job Queue(s)](http://docs.aws.amazon.com/batch/latest/userguide/job_queues.html) for execution. Each queue has a priority, and has at least one Compute Environment associated with it.
 - AWS Batch uses [ECS](https://aws.amazon.com/ecs/) to execute the containerized jobs.
 
-### Batch Tips
+## Batch Tips
 
 - AWS Batch supports prioritization of jobs via the Job Queue Priority. Higher the number - higher the priority.
 - AWS Batch supports launching the Compute Environment into specific VPC and subnets.
