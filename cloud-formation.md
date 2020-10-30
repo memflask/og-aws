@@ -1,3 +1,8 @@
++++
+memflask = True
+isdraft = False
++++
+
 # CloudFormation
 
 ## CloudFormation Basics
@@ -8,6 +13,7 @@
 CloudFormation allows you to define these stacks in a template using [JSON](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#aws-properties-ec2-instance-syntax.json) or [YAML](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#aws-properties-ec2-instance-syntax.yaml). CloudFormation is one of the major services underpinning AWS' [infrastructure as code capabilities](https://d0.awsstatic.com/whitepapers/DevOps/infrastructure-as-code.pdf)
 and is crucial in enabling repeatable and consistent deployments of infrastructure.
 
+## What is pricing model of Cloud Formation
 - CloudFormation itself has [no additional charge](https://aws.amazon.com/cloudformation/pricing/); 
 you pay for the underlying resources.
 
