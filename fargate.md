@@ -13,10 +13,14 @@ isdraft = False
 -   Fargate allows you to treat containers as fundamental building blocks of your infrastructure
 
 ## Fargate Tips
--   Fargate follows a similar mindset to Lambda, which lets you focus on applications, instead of dealing with underlying infrastructure
+-   Fargate follows a similar mindset to Lambda, which lets you focus on applications, 
+instead of dealing with underlying infrastructure
 -   Fargate is supported by CloudFormation, aws-cli and ecs-cli
 -   Fargate tasks can be launched alongside tasks that use EC2 Launch Type
--   💸Before creating a large Fargate deployment, make sure to estimate costs and compare them against alternative solution that uses traditional EC2 deployment - Fargate prices can be several times those of equivalently-sized EC2 instances. To evaluate both solutions based on potential costs, refer to pricing for [EC2](https://aws.amazon.com/ec2/pricing/) and [Fargate](https://aws.amazon.com/fargate/pricing/).
+-   Before creating a large Fargate deployment, 
+make sure to estimate costs and compare them against alternative solution that uses traditional EC2 deployment - 
+Fargate prices can be several times those of equivalently-sized EC2 instances. 
+To evaluate both solutions based on potential costs, refer to pricing for [EC2](https://aws.amazon.com/ec2/pricing/) and [Fargate](https://aws.amazon.com/fargate/pricing/).
 
 ## Fargate Alternatives and Lock-in
 -   🚪[Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/): Available on Microsoft Azure in preview version, allows to run applications in containers without having to manage virtual machines
