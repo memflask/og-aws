@@ -11,6 +11,9 @@ isdraft = False
 -	**AMIs** (Amazon Machine Images) are immutable images that are used to launch preconfigured EC2 instances. 
 They come in both public and private flavors. 
 Access to public AMIs is either freely available (shared/community AMIs) or bought and sold in the [**AWS Marketplace**](http://aws.amazon.com/marketplace).
+
+## AMIs support many of OS vender: 
+
 -	Many operating system vendors publish ready-to-use base AMIs. 
 For Ubuntu, see the [Ubuntu AMI Finder](https://cloud-images.ubuntu.com/locator/ec2/). 
 Amazon of course has [AMIs for Amazon Linux](https://aws.amazon.com/amazon-linux-ami/).
@@ -22,20 +25,39 @@ Amazon of course has [AMIs for Amazon Linux](https://aws.amazon.com/amazon-linux
 	-	PV or HVM [virtualization types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html)
 	-	32 bit (“i386”) vs 64 bit (“amd64”) architecture
 -	As discussed above, modern deployments will usually be with **64-bit EBS-backed HVM**.
+
+## create AMI by snapshot a EC2 instance
+
 -	You can create your own custom AMI by [snapshotting the state](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html) of an EC2 instance that you have modified.
--	[AMIs backed by EBS storage](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device) have the necessary image data loaded into the EBS volume itself and don’t require an extra pull from S3, which results in EBS-backed instances coming up much faster than instance storage-backed ones.
--	**AMIs are per region**, so you must look up AMIs in your region, or copy your AMIs between regions with the [AMI Copy](https://aws.amazon.com/about-aws/whats-new/2013/03/12/announcing-ami-copy-for-amazon-ec2/) feature.
+
+## AMI is backed by EBS storage then it will come up faster than instance  backed storage
+
+-	[AMIs backed by EBS storage](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device) have the necessary image data loaded into the EBS volume itself 
+and don’t require an extra pull from S3, which results in EBS-backed instances coming up much faster than instance storage-backed ones.
+
+
+## Each region have its own AMIs 
+
+-	**AMIs are per region**, so you must look up AMIs in your region, 
+or copy your AMIs between regions with the [AMI Copy](https://aws.amazon.com/about-aws/whats-new/2013/03/12/announcing-ami-copy-for-amazon-ec2/) feature.
+
+## Can tag AMIs to version or manage their lifecycle
+
 -	As with other AWS resources, it’s wise to [use tags](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) to version AMIs and manage their lifecycle.
 
-##	AMI Tips: If you create your own AMIs, there is always some tension in choosing how much installation and configuration you want to “bake” into them.
+##	AMI Tips: Baking less into your AMIs
 
 -	Baking less into your AMIs (for example, just a configuration management client that downloads, installs, and configures software on new EC2 instances 
 when they are launched) allows you to minimize time spent automating AMI creation and managing the AMI lifecycle (you will likely be able to use fewer AMIs 
 and will probably not need to update them as frequently), but results in longer waits before new instances are ready for use and results in a higher chance of launch-time installation or configuration failures.
 
+##	AMI Tips: Baking more into your AMIs
+
 -	Baking more into your AMIs (for example, pre-installing but not fully configuring common software along with a configuration management client that loads configuration settings at launch time) results 
 in a faster launch time and fewer opportunities for your software installation and configuration to break at instance launch time 
 but increases the need for you to create and manage a robust AMI creation pipeline.
+
+##	AMI Tips: Baking more and more into your AMIs
 
 -	Baking even more into your AMIs (for example, installing all required software as well and potentially also environment-specific configuration information):
 results in fast launch times and a much lower chance of instance launch-time failures but 
@@ -65,6 +87,8 @@ that will be added to your private AMI's once you sign up for Red Hat Cloud Acce
 
 **Amazon Linux package versions:** [By default](https://aws.amazon.com/amazon-linux-ami/faqs/#lock), 
 instances based on Amazon Linux AMIs are configured point to the latest versions of packages in Amazon’s package repository. 
+
+## what is posible issues if the package versions are not locked ?
 
 This means that the package versions that get installed are not locked and it is possible for changes, including breaking ones, 
 to appear when applying updates in the future. 
