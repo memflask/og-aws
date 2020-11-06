@@ -21,10 +21,15 @@ isdraft = False
 
 - Use ALBs to route to services that are hosted on shared clusters with dynamic port assignment (like ECS or Mesos).
 
-## ALBs support [HTTP host-based routing](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions) 
+## ALBs support HTTP host-based routing
+[HTTP host-based routing](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions) 
+
 (send HTTP requests for “api.mydomain.com” -> {target-group-1}, “blog.mydomain.com” -> {target group 2}) 
 
-## ALBs support [HTTP path-based routing](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#path-conditions) 
+## ALBs support HTTP path-based routing
+
+[HTTP path-based routing](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#path-conditions) 
+
 (send HTTP requests for “/api/&ast;” ->  {target-group-1}, “/blog/&ast;” -> {target group 2}).
 
 ## ALB Gotchas and Limitations
