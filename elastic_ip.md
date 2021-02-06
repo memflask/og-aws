@@ -1,5 +1,5 @@
 +++
-memflask = True
+noatcards = True
 isdraft = False
 +++
 
